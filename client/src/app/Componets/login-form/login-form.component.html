@@ -1,5 +1,22 @@
 <div>
-    <input id="username" type="text" placeholder=" Username" #username/><br><br>
-    <input id="password" type="password" placeholder=" Password" [style.color]="getColor()" #password/><br><br>
-    <button (click)="login(username.value,password.value)" >Login</button>
+    <form [formGroup]="myForm" >
+        <input  type="text" placeholder=" Username"
+            formControlName = 'username'
+            #username/><br>
+            <div *ngIf="!usernameController.valid && usernameController.touched" [style.color]="getColor()" >
+                <p *ngIf="usernameController.errors?.required" >Username required </p>
+                <p *ngIf="usernameController.errors?.email" >Correct email required</p>
+            </div>
+            <br>
+        <input  type="password" placeholder=" Password" 
+        formControlName = "password"  #password/><br><br>
+       <label>Select your role :</label>
+        <select [(ngModel)]  = "selectedRoleIndex" [ngModelOptions]="{standalone: true}">
+            <option  *ngFor="let role of dropDownOptions" [value]="role?.id">
+                {{role.role}}</option>
+          </select >
+          <br><br>
+        <button [disabled]="!myForm.valid" (click)="login(username.value,password.value)" >Login</button>
+    </form>
+
 </div>
