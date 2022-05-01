@@ -54,7 +54,7 @@ export class LoginFormComponent implements OnInit {
       console.log(`${username} ${password} Admin login succesful`);    
 
   }
-  getColor(){
+  getErrorMsgColor(){
     return "red";
   }
 

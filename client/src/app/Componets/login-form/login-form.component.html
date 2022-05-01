@@ -3,7 +3,7 @@
         <input  type="text" placeholder=" Username"
             formControlName = 'username'
             #username/><br>
-            <div *ngIf="!usernameController.valid && usernameController.touched" [style.color]="getColor()" >
+            <div *ngIf="!usernameController.valid && usernameController.touched" [style.color]="getErrorMsgColor()" >
                 <p *ngIf="usernameController.errors?.required" >Username required </p>
                 <p *ngIf="usernameController.errors?.email" >Correct email required</p>
             </div>
