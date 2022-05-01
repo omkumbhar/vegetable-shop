@@ -16,7 +16,7 @@
                 {{role.role}}</option>
           </select >
           <br><br>
-        <button [disabled]="!myForm.valid" (click)="login(username.value,password.value)" >Login</button>
+        <button  [disabled]="!myForm.valid" (click)="login(username.value,password.value)" mat-raised-button color="primary">Login</button>
     </form>
 
 </div>
