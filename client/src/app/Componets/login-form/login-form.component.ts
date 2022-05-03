@@ -18,16 +18,19 @@ export class LoginFormComponent implements OnInit {
   myForm: FormGroup;
   usernameController: FormControl;
   password: FormControl;
+  userController: FormControl;
 
   constructor() {
     this.dropDownOptions = [{ id: 0, role: "Admin" }, { id: 1, role: "User" }];
     this.usernameController = new FormControl('', [Validators.required, Validators.email]);
     this.password = new FormControl('', Validators.required);
+    this.userController = new FormControl('', Validators.required);
     
     this.myForm = new FormGroup(
       {
         username: this.usernameController,
-        password: this.password
+        password: this.password,
+        user :this.userController
       }
     );
 
@@ -54,7 +57,7 @@ export class LoginFormComponent implements OnInit {
 
     }
     else {
-      console.log(`Login unsuccesful`);
+      console.log(`Login unsuccesful ${this.selectedRoleIndex}`);
       this.password.reset();
 
     }

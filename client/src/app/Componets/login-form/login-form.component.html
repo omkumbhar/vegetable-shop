@@ -1,22 +1,42 @@
 <div>
-    <form [formGroup]="myForm" >
-        <input  type="text" placeholder=" Username"
-            formControlName = 'username'
-            #username/><br>
-            <div *ngIf="!usernameController.valid && usernameController.touched" [style.color]="getErrorMsgColor()" >
-                <p *ngIf="usernameController.errors?.required" >Username required </p>
-                <p *ngIf="usernameController.errors?.email" >Correct email required</p>
-            </div>
-            <br>
-        <input  type="password" placeholder=" Password" 
-        formControlName = "password"  #password/><br><br>
-       <label>Select your role :</label>
-        <select [(ngModel)]  = "selectedRoleIndex" [ngModelOptions]="{standalone: true}">
-            <option  *ngFor="let role of dropDownOptions" [value]="role?.id">
-                {{role.role}}</option>
-          </select >
+  <mat-card class="example-card">
+
+    <mat-card-content>
+      <form [formGroup]="myForm">
+
+        <p>
+          <mat-form-field [style.width.px]=327 appearance="standard">
+            <mat-label>Username</mat-label>
+            <input class="input-field" matInput type="text" placeholder=" Username" formControlName='username' #username />
+          </mat-form-field>
+        </p>
+
+        <div *ngIf="!usernameController.valid && usernameController.touched" [style.color]="getErrorMsgColor()">
+          <p *ngIf="usernameController.errors?.required">Username required </p>
+          <p *ngIf="usernameController.errors?.email">Correct email required</p>
+        </div>
+
+
+        <p>
+          <mat-form-field [style.width.px]=327  appearance="standard">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" placeholder=" Password" formControlName="password" #password />
+          </mat-form-field>
+        </p>
+
+        <p>
+          <label>Select your role : </label>
+          <select [(ngModel)]="selectedRoleIndex" [ngModelOptions]="{standalone: true}">
+            <option *ngFor="let role of dropDownOptions" [value]="role?.id">
+              {{role.role}}</option>
+          </select>
           <br><br>
-        <button  [disabled]="!myForm.valid" (click)="login(username.value,password.value)" mat-raised-button color="primary">Login</button>
-    </form>
+        </p>
+
+        <button (click)="login(username.value,password.value)" mat-raised-button color="primary">Login</button>
+      </form>
+    </mat-card-content>
+
+  </mat-card>
 
 </div>
