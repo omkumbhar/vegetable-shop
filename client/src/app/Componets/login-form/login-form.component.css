@@ -1,11 +1,12 @@
 .example-card {
-    min-height: 600px;
-    max-width: 400px;
-    margin-bottom: 8px;
-    margin-left: 40%;
-    text-align: center
-  }
+  min-height: 600px;
+  max-width: 400px;
+  margin-bottom: 8px;
+  margin-left: 40%;
+  text-align: center
+  
+}
 
-  .input-field {
-
-  }
+input[type="text"] {
+  font-size: 20px;
+}
