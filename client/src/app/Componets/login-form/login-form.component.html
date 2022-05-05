@@ -1,6 +1,6 @@
 <div>
   <mat-card class="example-card">
-    <mat-card-title class="content" >Sign In</mat-card-title>
+    <mat-card-title class="content">Sign In</mat-card-title>
     <mat-card-content style="margin-top: 30%;">
       <form [formGroup]="myForm">
         <p>
@@ -14,11 +14,16 @@
           <p *ngIf="usernameController.errors?.email">Correct email required</p>
         </div>
         <p>
-          <mat-form-field [style.width.px]=327  appearance="standard">
+          <mat-form-field [style.width.px]=327 appearance="standard">
             <mat-label>Password</mat-label>
-            <input matInput type="password"  formControlName="password" #password />
+            <input matInput type="password" formControlName="password" #password />
           </mat-form-field>
         </p>
+
+        <div *ngIf="!passwordController.valid && passwordController.touched" style="color: red;">
+          <p *ngIf="passwordController.errors?.required">Paasword required </p>
+        </div>
+
         <p>
           <label>Select your role : </label>
           <select [(ngModel)]="selectedRoleIndex" [ngModelOptions]="{standalone: true}">

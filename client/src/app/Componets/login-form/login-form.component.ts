@@ -13,18 +13,17 @@ export class LoginFormComponent  {
   userRoles: any[];
   myForm: FormGroup;
   usernameController: FormControl;
-  password: FormControl;
+  passwordController: FormControl;
   userController: FormControl;
   constructor() {
     this.userRoles = [{ id: 0, role: "Vegetable Seller" }, { id: 1, role: "Customer" }];
     this.usernameController = new FormControl('', [Validators.required, Validators.email]);
-    this.password = new FormControl('', Validators.required);
+    this.passwordController = new FormControl('', Validators.required);
     this.userController = new FormControl('', Validators.required);
     this.myForm = new FormGroup(
       {
         username: this.usernameController,
-        password: this.password,
-        user :this.userController
+        password: this.passwordController,
       }
     );
   }
@@ -39,7 +38,7 @@ export class LoginFormComponent  {
     }
     else {
       console.log(`Login unsuccesful ${this.selectedRoleIndex}`);
-      this.password.reset();
+      this.passwordController.reset();
     }
   }
 }
