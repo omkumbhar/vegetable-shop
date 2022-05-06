@@ -1,0 +1,19 @@
+.example-card {
+  min-height: 600px;
+  max-width: 400px;
+  margin-bottom: 8px;
+  margin-left: 40%;
+  text-align: center
+}
+
+input[type="text"] {
+  font-size: 20px;
+}
+
+.content{
+  font-size: 30px; 
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
