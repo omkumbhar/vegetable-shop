@@ -5,7 +5,7 @@ body {
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
-    background-image: url("./assets/shop-bg.jpg");
+    background-image: url("assets/shop-bg.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
 }

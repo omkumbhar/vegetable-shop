@@ -19,11 +19,9 @@
             <input matInput type="password" formControlName="password" #password />
           </mat-form-field>
         </p>
-
         <div *ngIf="!passwordController.valid && passwordController.touched" style="color: red;">
-          <p *ngIf="passwordController.errors?.required">Paasword required </p>
+          <p *ngIf="passwordController.errors?.required">Password required </p>
         </div>
-
         <p>
           <label>Select your role : </label>
           <select [(ngModel)]="selectedRoleIndex" [ngModelOptions]="{standalone: true}">
