@@ -1,38 +1,88 @@
 <mat-card class="example-card">
-  <mat-card-title>{{formTitle}}</mat-card-title>
+  <mat-card-title>{{ formTitle }}</mat-card-title>
   <mat-card-content class="content">
-    <form novalidate>
+    <form novalidate #form="ngForm" (ngSubmit)="onSubmit(form.value)">
       <p>
         <mat-form-field [style.width.px]="327" appearance="legacy">
           <mat-label>Item Name</mat-label>
-          <input type="text" class="input-size" matInput />
+          <input
+            type="text"
+            class="input-size"
+            name="itemName"
+            ngModel
+            matInput
+            required
+            #itemName="ngModel"
+          />
         </mat-form-field>
       </p>
+      <div *ngIf="!itemName.valid && itemName.touched" style="color: red">
+        <p *ngIf="itemName.errors?.required">Item Name required</p>
+      </div>
       <p>
         <mat-form-field [style.width.px]="327" appearance="legacy">
           <mat-label>Type</mat-label>
-          <input type="text" class="input-size" matInput />
+          <input
+            type="text"
+            class="input-size"
+            name="itemType"
+            ngModel
+            matInput
+            required
+            #type="ngModel"
+          />
         </mat-form-field>
       </p>
+      <div *ngIf="!type.valid && type.touched" style="color: red">
+        <p *ngIf="type.errors?.required">Item type required</p>
+      </div>
       <p>
         <mat-form-field [style.width.px]="327" appearance="legacy">
           <mat-label>Available Quantity</mat-label>
-
-          <input type="number" class="input-size" matInput />
+          <input
+            type="number"
+            class="input-size"
+            name="itemQuantity"
+            ngModel
+            #quantity="ngModel"
+            matInput
+            required
+            min="1"
+          />
         </mat-form-field>
       </p>
+      <div *ngIf="!quantity.valid && quantity.touched" style="color: red">
+        <p *ngIf="quantity.errors?.required">Item Quantity required</p>
+        <p *ngIf="quantity.errors?.min">invalid quantity entred</p>
+      </div>
       <p>
         <mat-form-field [style.width.px]="327" appearance="legacy">
           <mat-label>Item Group</mat-label>
-          <mat-select>
+          <mat-select name="itemGroup" ngModel #group="ngModel" required>
             <mat-option *ngFor="let item of itemType" [value]="item?.id">
               {{ item?.type }}
             </mat-option>
           </mat-select>
         </mat-form-field>
       </p>
-      <button class="btn" mat-raised-button color="primary">Insert</button>
-      <button class="btn" mat-raised-button color="warn">Reset</button>
+      <div *ngIf="!group.valid && group.touched" style="color: red">
+        <p *ngIf="group.errors?.required">Item group required</p>
+      </div>
+      <button
+        class="btn"
+        type="submit"
+        mat-raised-button
+        color="primary"
+        [disabled]="form.invalid"
+      >
+        Insert
+      </button>
+      <button class="btn" type="reset" mat-raised-button color="warn">
+        Reset
+      </button>
+      <div>
+        <pre>{{ form.value | json }}</pre>
+      </div>
     </form>
   </mat-card-content>
 </mat-card>
