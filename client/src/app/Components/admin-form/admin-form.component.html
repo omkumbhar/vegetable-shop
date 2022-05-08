@@ -1,1 +1,38 @@
-<p>admin-form works!</p>
+<mat-card class="example-card">
+  <mat-card-title>{{formTitle}}</mat-card-title>
+  <mat-card-content class="content">
+    <form novalidate>
+      <p>
+        <mat-form-field [style.width.px]="327" appearance="legacy">
+          <mat-label>Item Name</mat-label>
+          <input type="text" class="input-size" matInput />
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field [style.width.px]="327" appearance="legacy">
+          <mat-label>Type</mat-label>
+          <input type="text" class="input-size" matInput />
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field [style.width.px]="327" appearance="legacy">
+          <mat-label>Available Quantity</mat-label>
+
+          <input type="number" class="input-size" matInput />
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field [style.width.px]="327" appearance="legacy">
+          <mat-label>Item Group</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let item of itemType" [value]="item?.id">
+              {{ item?.type }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </p>
+      <button class="btn" mat-raised-button color="primary">Insert</button>
+      <button class="btn" mat-raised-button color="warn">Reset</button>
+    </form>
+  </mat-card-content>
+</mat-card>

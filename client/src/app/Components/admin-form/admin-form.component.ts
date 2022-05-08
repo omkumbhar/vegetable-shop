@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-form.component.css']
 })
 export class AdminFormComponent implements OnInit {
-
+  formTitle = "ADD ITEM";
+  itemType = [ {id : 0, type :"Vegitable"},{id : 1, type :"Fruit"}];
   constructor() { }
 
   ngOnInit(): void {
