@@ -15,7 +15,6 @@ export class AdminFormComponent {
   items: ItemModel[] = [];
   constructor() {}
   onSubmit(value: ItemModel) {
-    console.log('value = ' + value);
     console.log('itemName = ' + value.itemName);
     console.log('itemGroup = ' + value.itemGroup);
     console.log('itemQuantity = ' + value.itemQuantity);
