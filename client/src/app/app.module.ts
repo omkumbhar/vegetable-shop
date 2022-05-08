@@ -42,20 +42,17 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { OverlayModule } from '@angular/cdk/overlay';
-import { AppRoutingModule } from 'src/app/app-routing.module';
+import { AppRoutingModule, routingComponents } from 'src/app/app-routing.module';
 import { AppComponent } from 'src/app/app.component';
-import { LoginFormComponent } from 'src/app/Components/login-form/login-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { AdminFormComponent } from './Components/admin-form/admin-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginFormComponent,
-    AdminFormComponent
+    routingComponents
   ],
   imports: [
     A11yModule,
