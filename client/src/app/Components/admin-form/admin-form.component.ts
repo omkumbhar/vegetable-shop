@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ItemGroup } from 'src/app/DataModels/ItemGroup';
 import { ItemModel } from 'src/app/DataModels/ItemModel';
 
 @Component({
@@ -9,8 +10,8 @@ import { ItemModel } from 'src/app/DataModels/ItemModel';
 export class AdminFormComponent {
   formTitle = 'ADD ITEM';
   itemType = [
-    { id: 0, type: 'Vegitable' },
-    { id: 1, type: 'Fruit' },
+    { id: ItemGroup.Vegitable, type: 'Vegitable' },
+    { id: ItemGroup.Fruit, type: 'Fruit' },
   ];
   items: ItemModel[] = [];
   constructor() {}
