@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-form',
@@ -17,7 +18,7 @@ export class LoginFormComponent {
   passwordController: FormControl;
   userController: FormControl;
 
-  constructor() {
+  constructor(private router : Router) {
     this.userRoles = [{ id: 0, role: "Vegetable Seller" }, { id: 1, role: "Customer" }];
     this.usernameController = new FormControl('', [Validators.required, Validators.email]);
     this.passwordController = new FormControl('', Validators.required);
@@ -36,6 +37,7 @@ export class LoginFormComponent {
     }
     else if (this.selectedRoleIndex === 0 && this.admin.username === username && this.admin.password === password) {
       console.log(`${username} ${password} Admin login succesful`);
+      this.router.navigateByUrl('/add-item'); 
     }
     else {
       console.log(`Login unsuccesful ${this.selectedRoleIndex}`);
