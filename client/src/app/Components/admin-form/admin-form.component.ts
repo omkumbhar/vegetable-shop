@@ -13,7 +13,7 @@ export class AdminFormComponent {
     { id: ItemGroup.Vegitable, type: 'Vegitable' },
     { id: ItemGroup.Fruit, type: 'Fruit' },
   ];
-  items: ItemModel[] = [];
+
   constructor() {}
   onSubmit(value: ItemModel) {
     console.log('itemName = ' + value.itemName);
