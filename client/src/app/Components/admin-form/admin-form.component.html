@@ -2,6 +2,19 @@
   <mat-card-title>{{ formTitle }}</mat-card-title>
   <mat-card-content class="content">
     <form novalidate #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+    <p>
+      <mat-form-field [style.width.px]="327" appearance="legacy">
+        <mat-label>Item Group</mat-label>
+        <mat-select name="itemGroup" ngModel #group="ngModel" required>
+          <mat-option *ngFor="let item of itemType" [value]="item?.id">
+            {{ item?.type }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </p>
+    <div *ngIf="!group.valid && group.touched" style="color: red">
+      <p *ngIf="group.errors?.required">Item group required</p>
+    </div>
       <p>
         <mat-form-field [style.width.px]="327" appearance="legacy">
           <mat-label>Item Name</mat-label>
@@ -52,22 +65,31 @@
         </mat-form-field>
       </p>
       <div *ngIf="!quantity.valid && quantity.touched" style="color: red">
-        <p *ngIf="quantity.errors?.required">Item Quantity required</p>
+        <p *ngIf="quantity.errors?.required">Item quantity required</p>
         <p *ngIf="quantity.errors?.min">invalid quantity entred</p>
       </div>
+      
       <p>
         <mat-form-field [style.width.px]="327" appearance="legacy">
-          <mat-label>Item Group</mat-label>
-          <mat-select name="itemGroup" ngModel #group="ngModel" required>
-            <mat-option *ngFor="let item of itemType" [value]="item?.id">
-              {{ item?.type }}
-            </mat-option>
-          </mat-select>
+          <mat-label>Price</mat-label>
+          <input
+            type="number"
+            class="input-size"
+            name="itemPrice"
+            ngModel
+            #price="ngModel"
+            matInput
+            required
+            min="1"
+          />
         </mat-form-field>
       </p>
-      <div *ngIf="!group.valid && group.touched" style="color: red">
-        <p *ngIf="group.errors?.required">Item group required</p>
+      <div *ngIf="!price.valid && price.touched" style="color: red">
+        <p *ngIf="price.errors?.required">Item price required</p>
+        <p *ngIf="price.errors?.min">invalid price entred</p>
       </div>
+
+        
       <button
         class="btn"
         type="submit"

@@ -3,6 +3,7 @@ export class ItemModel {
     public itemName: string,
     public itemType: string,
     public itemQuantity: string,
-    public itemGroup: string
+    public itemGroup: string,
+    public itemPrice: string
   ) {}
 }

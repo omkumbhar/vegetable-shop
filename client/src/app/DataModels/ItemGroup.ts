@@ -1,4 +1,4 @@
 export enum ItemGroup{
-    Vegitable,
+    Vegetable,
     Fruit
 }

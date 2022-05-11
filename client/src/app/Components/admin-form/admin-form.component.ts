@@ -10,7 +10,7 @@ import { ItemModel } from 'src/app/DataModels/ItemModel';
 export class AdminFormComponent {
   formTitle = 'ADD ITEM';
   itemType = [
-    { id: ItemGroup.Vegitable, type: 'Vegitable' },
+    { id: ItemGroup.Vegetable, type: 'Vegetable' },
     { id: ItemGroup.Fruit, type: 'Fruit' },
   ];
 
@@ -20,5 +20,6 @@ export class AdminFormComponent {
     console.log('itemGroup = ' + value.itemGroup);
     console.log('itemQuantity = ' + value.itemQuantity);
     console.log('itemType = ' + value.itemType);
+    console.log('itemPrice = ' + value.itemPrice);
   }
 }
