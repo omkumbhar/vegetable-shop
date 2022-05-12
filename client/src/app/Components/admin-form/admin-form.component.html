@@ -81,12 +81,14 @@
             matInput
             required
             min="1"
+            pattern="^[0-9]*$"
           />
         </mat-form-field>
       </p>
       <div *ngIf="!price.valid && price.touched" style="color: red">
         <p *ngIf="price.errors?.required">Item price required</p>
         <p *ngIf="price.errors?.min">invalid price entred</p>
+        <p *ngIf="price.errors?.pattern">Please enter whole number as a price</p>
       </div>
 
         
