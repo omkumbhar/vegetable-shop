@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ItemGroup } from 'src/app/DataModels/ItemGroup';
 import { ItemModel } from 'src/app/DataModels/ItemModel';
+import { ItemService } from 'src/app/Services/item.service';
 
 @Component({
   selector: 'app-admin-form',
@@ -14,12 +15,10 @@ export class AdminFormComponent {
     { id: ItemGroup.Fruit, type: 'Fruit' },
   ];
 
-  constructor() {}
-  onSubmit(value: ItemModel) {
-    console.log('itemName = ' + value.itemName);
-    console.log('itemGroup = ' + value.itemGroup);
-    console.log('itemQuantity = ' + value.itemQuantity);
-    console.log('itemType = ' + value.itemType);
-    console.log('itemPrice = ' + value.itemPrice);
+  constructor(private itemService: ItemService) {}
+
+  onSubmit(item: ItemModel) {
+    this.itemService.addItemToList(item);
+    console.log(this.itemService.getItemList());
   }
 }
