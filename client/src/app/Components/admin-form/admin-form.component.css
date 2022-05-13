@@ -1,0 +1,16 @@
+.example-card {
+    min-height: 600px;
+    max-width: 400px;
+    margin-bottom: 8px;
+    margin-left: 40%;
+    text-align: center
+  }
+  .content{
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn{
+      margin: 10px;
+  }
