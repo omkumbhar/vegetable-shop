@@ -1,4 +1,4 @@
-export enum ItemGroup{
+export enum ItemGroup {
     Vegetable,
     Fruit
 }
