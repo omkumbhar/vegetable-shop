@@ -37,7 +37,7 @@ export class LoginFormComponent {
     }
     else if (this.selectedRoleIndex === 0 && this.admin.username === username && this.admin.password === password) {
       console.log(`${username} ${password} Admin login succesful`);
-      this.router.navigateByUrl('/add-item');
+      this.router.navigateByUrl('/admin');
     }
     else {
       console.log(`Login unsuccesful ${this.selectedRoleIndex}`);
