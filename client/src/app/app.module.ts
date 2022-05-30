@@ -42,7 +42,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { OverlayModule } from '@angular/cdk/overlay';
-import { AppRoutingModule, routingComponents } from 'src/app/app-routing.module';
+import {
+  AppRoutingModule,
+  routingComponents,
+} from 'src/app/app-routing.module';
 import { AppComponent } from 'src/app/app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
@@ -50,10 +53,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    routingComponents
-  ],
+  declarations: [AppComponent, routingComponents],
   imports: [
     A11yModule,
     ClipboardModule,
@@ -108,6 +108,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatButtonModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
