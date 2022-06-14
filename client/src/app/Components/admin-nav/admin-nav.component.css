@@ -1,5 +1,25 @@
+.links {
+  margin-right: 1px;
+}
 
-.button {
+a:link,
+a:visited {
+  background-color: rgb(47, 149, 208);
+  color: black;
+  border: 1px solid rgb(56, 56, 149);
+  padding: 1px 2px;
+
+  text-align: center;
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  background-color: rgb(56, 56, 149);
+  color: white;
+}
+/*TODO: Keeping it to improve css for links in future */
+/* .button {
     width: 115px;
     height: 5px;
     background: #4E9CAF;
@@ -11,7 +31,7 @@
     border-width : 1px 1px 1px 1px;
     border-color : #000000;
     border-color : white;
-}
+} */
 /* .button  {
     width: 115px;
     height: 5px;
