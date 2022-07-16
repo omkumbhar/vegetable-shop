@@ -4,7 +4,6 @@ import { ItemModel } from 'src/app/DataModels/ItemModel';
 @Injectable({
   providedIn: 'root',
 })
-
 export class ItemService {
   itemList: ItemModel[];
 

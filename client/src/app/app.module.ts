@@ -51,9 +51,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { AdminNavComponent } from './Components/admin-components/components/admin-nav/admin-nav.component';
 
 @NgModule({
-  declarations: [AppComponent, routingComponents],
+  declarations: [AppComponent, routingComponents, AdminNavComponent],
   imports: [
     A11yModule,
     ClipboardModule,
